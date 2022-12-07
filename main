@@ -1,0 +1,28 @@
+import 'package:application_covid/Tela_4.dart';
+import 'package:flutter/material.dart';
+
+import 'Tela_0.dart';
+import 'Tela_1.dart';
+import 'Tela_2.dart';
+import 'Tela_3.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      initialRoute: '/', 
+      routes: { '/':(context) => Tela_0(),
+      '/primeira':(context) => Tela_1(),
+      '/segunda':(context) => Tela_2(risco: 0, ),
+      '/terceira':(context) => Tela_3(risco: 0, ),
+      '/quarta':(context) => Tela_4(resultado: '',),
+      }
+    );
+  }
+}
