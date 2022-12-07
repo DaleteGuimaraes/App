@@ -1,0 +1,53 @@
+import 'package:flutter/material.dart';
+import 'Operacoes.dart';
+import 'Tela_4.dart';
+
+class Tela_3 extends StatefulWidget {
+  var risco;
+
+  Tela_3({super.key, required this.risco, });
+
+  @override
+  State<Tela_3> createState() => _Tela_3State();
+}
+
+class _Tela_3State extends State<Tela_3> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+            backgroundColor: Colors.green,
+            title: Text('')),
+
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              child: Center(child: Text(' Possui pessoas que se enquadram no grupo de risco que moram com você ?')),
+            ),
+            SizedBox(height: 30,),
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(onPressed: () {
+                    widget.risco++;
+                    
+Operacoes op = Operacoes();
+String resultado = op.calculoDoRisco(widget.risco);
+                    Navigator.push(
+    context,MaterialPageRoute(builder: (context) => Tela_4(resultado: resultado,)),); }, child: Center(child: Text('Sim'))),
+                  ElevatedButton(onPressed: () {
+                    
+Operacoes op = Operacoes();
+String resultado = op.calculoDoRisco(widget.risco);
+                    Navigator.push(
+    context,MaterialPageRoute(builder: (context) => Tela_4(resultado: resultado,)),);}, child: Center(child: Text('Não')),)
+                ],
+              ),
+            )
+          ],
+        ));
+
+  }
+}
