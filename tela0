@@ -1,0 +1,40 @@
+import 'package:flutter/material.dart';
+import 'Tela_1.dart';
+
+class Tela_0 extends StatelessWidget {
+  const Tela_0({super.key});
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+            backgroundColor: Colors.green,
+            title: Text('Informações sobre COVID-19')),
+            
+          children: [Container(height: double.infinity,width: double.infinity,child: Image(image: NetworkImage('https://www.paho.org/sites/default/files/styles/max_1300x1300/public/card/2021-03/coronavirus.png?itok=T0zMfsO2') ),),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                //Image.asset('Imagens/imagem.jpeg')
+                Container(
+                  child: Center(child: Text(' Prezado usuário, esse é um aplicativo de saúde que foi desenvolvido com o intuito de fornecer seu grau de risco em relação a COVID-19, baseado em umas perguntas que deverá ser respondidas, a seguir.')),
+                ),
+                Container(
+                  child: Center(child: Text(' ')),
+                ),
+                SizedBox(height: 40,),
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(onPressed: () {Navigator.push(
+    context,MaterialPageRoute(builder: (context) =>  Tela_1()),); }, child: Center(child: Text('Avançar'))),
+                      ],
+                  ),
+                )
+              ],
+            ),
+          ],
+        ));
+  }
+}
