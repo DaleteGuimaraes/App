@@ -1,0 +1,43 @@
+import 'package:application_covid/Tela_0.dart';
+import 'package:flutter/material.dart';
+import 'Tela_2.dart';
+
+class Tela_1 extends StatelessWidget {
+  Tela_1({super.key});
+
+  int risco = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+            backgroundColor: Colors.green,
+            title: Text('')),
+            
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              child: Center(child: Text('Você tomou 3 ou mais doses da vacina de COVID-19?')),
+            ),
+            SizedBox(height: 30,),
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(onPressed: () {
+                    Navigator.push(
+    context,MaterialPageRoute(builder: (context) =>  Tela_2(risco: risco, )),);
+   
+    }, child: Center(child: Text('Sim'))),
+                  ElevatedButton(onPressed: () {
+                    risco++;
+                    Navigator.push(
+    context,MaterialPageRoute(builder: (context) => Tela_2(risco: risco,)),);}, child: Center(child: Text('Não')),)
+                ],
+              ),
+            )
+          ],
+        ));
+  }
+}
