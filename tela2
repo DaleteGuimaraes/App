@@ -1,0 +1,52 @@
+import 'package:flutter/material.dart';
+import 'Tela_3.dart';
+
+
+class Tela_2 extends StatefulWidget {
+  var risco;
+
+  Tela_2({super.key, required this.risco});
+
+  @override
+  State<Tela_2> createState() => _Tela_2State();
+}
+
+class _Tela_2State extends State<Tela_2> {
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+            backgroundColor: Colors.green,
+            title: Text('')),
+
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              child: Center(child: Text(' Você possui alguma comorbidade? ')),
+            ),
+            Container(
+              child: Center(child: Text('Ex: obesidade, diabetes, entre outras.')),
+            ),
+            SizedBox(height: 30,),
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(onPressed: () {
+                    widget.risco++;                                   
+                    Navigator.push(
+    context,MaterialPageRoute(builder: (context) => Tela_3(risco: widget.risco,)),); }, child: Center(child: Text('Sim'))),
+                  ElevatedButton(onPressed: () {
+                    
+                    Navigator.push(
+    context,MaterialPageRoute(builder: (context) => Tela_3(risco: widget.risco, )),);}, child: Center(child: Text('Não')),)
+                ],
+              ),
+            )
+          ],
+        ));
+
+  }
+}
