@@ -1,0 +1,18 @@
+class Operacoes{
+
+
+  String calculoDoRisco(risco){
+    String r = '';
+    if(risco == 0 || risco == 1){
+r = 'Risco Baixo';
+    }else if(risco == 2){
+      r = 'Risco Médio';
+    }else if(risco == 3){
+      r = 'Risco Alto';
+    }
+    
+    
+    return r;}
+
+
+}
