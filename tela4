@@ -1,0 +1,46 @@
+import 'package:application_covid/Tela_0.dart';
+import 'package:application_covid/operacoes.dart';
+import 'package:flutter/material.dart';
+
+
+class Tela_4 extends StatefulWidget {
+  var resultado;
+  Tela_4({super.key,required this.resultado});
+
+  @override
+  State<Tela_4> createState() => _Tela_4State();
+}
+class _Tela_4State extends State<Tela_4> {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+            backgroundColor: Colors.green,
+            title: Text(' ')),
+
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              child: Center(child: Text('Resultado do seu Grau de Risco: ')),
+            ),
+            Container(
+              child: Center(child: Text(widget.resultado)),
+            ),
+            SizedBox(height: 30,),
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(onPressed: () { Navigator.push(
+    context,MaterialPageRoute(builder: (context) => Tela_0()),); }, child: Center(child: Text('Retornar a Tela Principal'))),
+                ]
+              ),
+            ),
+
+          ],
+        ));
+
+  }
+}
